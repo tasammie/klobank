@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Screen2 extends StatelessWidget {
+class Screen5 extends StatelessWidget {
   final Color customColor = const Color(0xD9D9D9);
   final Color logoColor = const Color(0xFF0F2E6B);
-  const Screen2({super.key});
+  const Screen5({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +21,14 @@ class Screen2 extends StatelessWidget {
               width: 180,
             ),
             Image.asset(
-              'assets/images/screen2_img1.png',
+              'assets/images/screen5_img1.png',
               width: 350,
               fit: BoxFit.contain,
             ),
             const Column(
               children: [
                 Text(
-                  'Setup your various cards to use in a single platform',
+                  'Swap, buy and sell your crypto at the market price',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,

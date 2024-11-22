@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Screen2 extends StatelessWidget {
+class Screen4 extends StatelessWidget {
   final Color customColor = const Color(0xD9D9D9);
   final Color logoColor = const Color(0xFF0F2E6B);
-  const Screen2({super.key});
+  const Screen4({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class Screen2 extends StatelessWidget {
               width: 180,
             ),
             Image.asset(
-              'assets/images/screen2_img1.png',
+              'assets/images/screen4_img1.png',
               width: 350,
               fit: BoxFit.contain,
             ),
