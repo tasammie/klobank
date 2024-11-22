@@ -17,9 +17,10 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _controller = PageController();
   int currentPageIndex = 0;
+  final Color logoColor = const Color(0xFF0F2E6B);
 
   final List<String> nextButtonImages = [
-    '', 
+    '',
     'assets/images/screen2_img2.png',
     'assets/images/screen3_img2.png',
     'assets/images/screen4_img2.png',
@@ -46,16 +47,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               const Screen5(),
             ],
           ),
-          if (currentPageIndex > 0) 
+          if (currentPageIndex > 0)
             Container(
               alignment: const Alignment(0, 0.8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const SizedBox(), 
+                  const SizedBox(),
                   SmoothPageIndicator(
                     controller: _controller,
-                    count: 5, 
+                    count: 5,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -68,17 +69,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>
-                                const HomePage(), 
+                            builder: (context) => const HomePage(),
                           ),
                         );
                       }
                     },
                     child: Image.asset(
-                      nextButtonImages[
-                          currentPageIndex], 
-                      width: 50, 
-                      height: 50, 
+                      // color: logoColor,
+                      nextButtonImages[currentPageIndex],
+                      width: 50,
+                      height: 50,
                     ),
                   ),
                 ],
