@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:klobank/SCREEN/home_page.dart';
-import 'package:klobank/SCREEN/onboardingScreen.dart';
+import 'package:klobank/SCREEN/onboardFolder/onboardingScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       routes: {
-        "/": (context) => const OnboardingScreen(),
+        "/": (context) => OnboardingScreen(),
         "/home": (context) => const HomePage(),
       },
     );

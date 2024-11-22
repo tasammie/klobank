@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+
+class Screen2 extends StatelessWidget {
+  final Color customColor = const Color(0xFFD9D9D9); // Light gray background color
+
+  const Screen2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Image.asset(
+            'assets/images/screen1.png',
+            color: Colors.black,
+            width: 160,
+            height: 50,
+          ),
+        ),
+        backgroundColor: Colors.white, // Optional: Match the AppBar background with the body
+        elevation: 0, // Optional: Remove shadow for a flat design
+      ),
+      body: Container(
+        color: customColor, // Background color for the body
+        padding: const EdgeInsets.symmetric(horizontal: 20), // Consistent padding for layout
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Main Image
+            Image.asset(
+              'assets/images/screen2_img1.png',
+              width: 300, // Adjusted width for better responsiveness
+              fit: BoxFit.contain, // Ensures the image scales correctly
+            ),
+            const SizedBox(height: 40),
+            
+            // Main Heading
+            const Text(
+              'Manage all cryptofolio in a single place',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 20),
+            
+            // Description Text
+            const Text(
+              'With all your cryptocurrencies in one spot, managing them is made simple.',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.normal,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
