@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:klobank/SCREEN/auth/login.dart';
+import 'package:klobank/SCREEN/auth/signup.dart';
 import 'package:klobank/SCREEN/home_page.dart';
 
 class Screen5 extends StatelessWidget {
@@ -89,13 +90,11 @@ class Screen5 extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: logoColor, // Blue background
+                        backgroundColor: logoColor,
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 130,
-                            vertical: 15), // Padding for button
+                            horizontal: 130, vertical: 15),
                         shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(8), // Rounded corners
+                          borderRadius: BorderRadius.circular(8),
                         ),
                       ),
                       child: Text(
@@ -107,13 +106,15 @@ class Screen5 extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    // Registration button
                     const SizedBox(height: 15),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const HomePage(),
+                            builder: (context) => const SignupPage(),
                           ),
                         );
                       },

@@ -167,7 +167,7 @@ class _LoginPageState extends State<LoginPage> {
             Align(
               alignment: Alignment.center,
               child: TextButton(
-                onPressed: () => Navigator.pushNamed(context, '/signup'),
+                onPressed: () => Navigator.pushNamed(context, '/SignupPage'),
                 child: RichText(
                   text: const TextSpan(
                     text: "Don't have an account? ",
