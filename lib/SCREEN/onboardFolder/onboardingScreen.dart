@@ -19,14 +19,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   int currentPageIndex = 0;
   final Color logoColor = const Color(0xFF0F2E6B);
 
-  final List<String> nextButtonImages = [
-    '',
-    'assets/images/screen2_img2.png',
-    'assets/images/screen3_img2.png',
-    'assets/images/screen4_img2.png',
-    'assets/images/screen5_img2.png',
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,20 +39,35 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               const Screen5(),
             ],
           ),
-          if (currentPageIndex > 0)
+         
+          if (currentPageIndex < 4)
             Container(
               alignment: const Alignment(0, 0.8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const SizedBox(),
+                  const SizedBox(), // Empty space for layout
                   SmoothPageIndicator(
                     controller: _controller,
                     count: 5,
+                    effect: ScrollingDotsEffect(
+                      activeDotColor: logoColor,
+                      dotColor: Colors.grey,
+                      dotHeight: 8,
+                      dotWidth: 8,
+                      spacing: 12,
+                    ),
+                    onDotClicked: (index) {
+                      _controller.animateToPage(
+                        index,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    },
                   ),
                   GestureDetector(
                     onTap: () {
-                      if (currentPageIndex < 4) {
+                      if (currentPageIndex < 3) {
                         _controller.nextPage(
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOut,
@@ -69,21 +76,23 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const HomePage(),
+                            builder: (context) => const Screen5(),
                           ),
                         );
                       }
                     },
-                    child: Image.asset(
-                      // color: logoColor,
-                      nextButtonImages[currentPageIndex],
-                      width: 50,
-                      height: 50,
+                    child: Text(
+                      currentPageIndex < 3 ? "Next" : "Done",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: logoColor,
+                      ),
                     ),
                   ),
                 ],
               ),
-            ),
+            )
         ],
       ),
     );

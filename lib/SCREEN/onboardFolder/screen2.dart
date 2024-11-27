@@ -18,17 +18,17 @@ class Screen2 extends StatelessWidget {
             Image.asset(
               'assets/images/screen1.png',
               color: logoColor,
-              width: 180,
+              width: 140,
             ),
             Image.asset(
-              'assets/images/screen2_img1.png',
+              'assets/images/screen3_img1.png',
               width: 350,
               fit: BoxFit.contain,
             ),
             const Column(
               children: [
                 Text(
-                  'Setup your various cards to use in a single platform',
+                  'Pay your various bills fast and without hassle',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -49,7 +49,7 @@ class Screen2 extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 30,
+              height: 60,
             ),
           ],
         ),

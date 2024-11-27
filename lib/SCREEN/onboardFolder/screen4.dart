@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class Screen4 extends StatelessWidget {
   final Color customColor = const Color(0xD9D9D9);
   final Color logoColor = const Color(0xFF0F2E6B);
+  final Color backgroundColor = Colors.white;
+
   const Screen4({super.key});
 
   @override
@@ -18,17 +20,17 @@ class Screen4 extends StatelessWidget {
             Image.asset(
               'assets/images/screen1.png',
               color: logoColor,
-              width: 180,
+              width: 140,
             ),
             Image.asset(
-              'assets/images/screen4_img1.png',
+              'assets/images/screen5_img1.png',
               width: 350,
               fit: BoxFit.contain,
             ),
             const Column(
               children: [
                 Text(
-                  'Setup your various cards to use in a single platform',
+                  'Swap, buy and sell your crypto at the market price',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -49,7 +51,7 @@ class Screen4 extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 30,
+              height: 60,
             ),
           ],
         ),
