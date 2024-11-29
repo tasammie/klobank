@@ -41,7 +41,7 @@ class Screen5 extends StatelessWidget {
             ),
 
             Positioned(
-              bottom: MediaQuery.of(context).size.height * 0.05,
+              bottom: MediaQuery.of(context).size.height * 0.18,
               left: 20,
               right: 20,
               child: Container(

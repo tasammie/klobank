@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:klobank/SCREEN/auth/phoneNumber_screen.dart';
 import 'package:klobank/SCREEN/button/custom_button.dart';
 import 'package:klobank/SCREEN/colors/app_colors.dart';
 
@@ -230,7 +231,14 @@ class _SignupPageState extends State<SignupPage> {
               label: 'Next',
               fontSize: 20,
               textColor: Colors.white,
-              onPressed: () {},
+              onPressed: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PhoneNumberScreen(),
+                  ),
+                ),
+              },
             ),
             const SizedBox(
               height: 10,
@@ -285,7 +293,7 @@ class _SignupPageState extends State<SignupPage> {
             Align(
               alignment: Alignment.center,
               child: TextButton(
-                onPressed: () => Navigator.pushNamed(context, '/login'),
+                onPressed: () => Navigator.pushNamed(context, '/'),
                 child: RichText(
                   text: const TextSpan(
                     text: "Already have an account? ",

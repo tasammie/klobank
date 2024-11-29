@@ -1,0 +1,149 @@
+image here: import 'package:flutter/material.dart';
+import 'package:klobank/SCREEN/button/custom_button.dart';
+import 'package:klobank/SCREEN/colors/app_colors.dart';
+import 'package:klobank/SCREEN/home_page.dart';
+
+class OtpScreen extends StatefulWidget {
+  const OtpScreen({super.key});
+
+  @override
+  State<OtpScreen> createState() => _OtpScreenState();
+}
+
+class _OtpScreenState extends State<OtpScreen> {
+  final TextEditingController _phoneController = TextEditingController();
+  final FocusNode _phoneFocusNode = FocusNode();
+  bool _isPhoneValid = false;
+
+
+  final List<Map<String, String>> countryList = [
+    {'code': '+1', 'flag': '🇺🇸'},
+    {'code': '+44', 'flag': '🇬🇧'},
+    {'code': '+91', 'flag': '🇮🇳'},
+  ];
+
+  String selectedCountryCode = '+1'; 
+
+  @override
+  void dispose() {
+    _phoneController.dispose();
+    _phoneFocusNode.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.background_color,
+      appBar: AppBar(
+        backgroundColor: AppColors.background_color,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back_ios_new_rounded,
+            size: 18,
+          ),
+        ),
+      ),
+      resizeToAvoidBottomInset: true,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 200,
+                child: Image.asset('assets/images/otp1.png'),
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'OTP Verification',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'Please enter your phone number to receive OTP',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey,
+                ),
+              ),
+              const SizedBox(height: 30),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Colors.grey.shade200,
+                  border: Border.all(color: Colors.grey.shade400),
+                ),
+                child: Row(
+                  children: [
+                    DropdownButton<String>(
+                      value: selectedCountryCode,
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          selectedCountryCode = newValue!;
+                        });
+                      },
+                      items: countryList.map((country) {
+                        return DropdownMenuItem<String>(
+                          value: country['code']!,
+                          child: Row(
+                            children: [
+                              Text(country['flag']!),
+                              const SizedBox(width: 5),
+                              Text(country['code']!),
+                            ],
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                    const VerticalDivider(color: Colors.grey),
+                    Expanded(
+                      child: TextField(
+                        controller: _phoneController,
+                        focusNode: _phoneFocusNode,
+                        keyboardType: TextInputType.phone,
+                        decoration: const InputDecoration(
+                          hintText: 'Phone number',
+                          border: InputBorder.none,
+                        ),
+                        onChanged: (value) {
+                          setState(() {
+                            _isPhoneValid =
+                                value.length > 9; 
+                          });
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 40),
+              CustomButton(
+                label: 'Continue',
+                onPressed: _isPhoneValid
+                    ? () {
+                        FocusScope.of(context).unfocus(); 
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      }
+                    : null, 
+                backgroundColor: AppColors.buttonAndLogoColor,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

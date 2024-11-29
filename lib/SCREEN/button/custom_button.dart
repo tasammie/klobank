@@ -3,7 +3,7 @@ import 'package:klobank/SCREEN/colors/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String label;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final Color textColor;
   final Color backgroundColor;
   final double borderRadius;

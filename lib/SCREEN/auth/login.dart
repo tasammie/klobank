@@ -5,7 +5,7 @@ import 'package:klobank/SCREEN/colors/app_colors.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
-  final Color fieldColor = const Color(0xFFF6FAFF); // Adjusted to proper format
+  final Color fieldColor = const Color(0xFFF6FAFF); 
   final Color strokeColor = const Color(0xFFE2EFFF);
 
   @override
