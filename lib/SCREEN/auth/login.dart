@@ -5,7 +5,7 @@ import 'package:klobank/SCREEN/colors/app_colors.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
-  final Color fieldColor = const Color(0xFFF6FAFF); 
+  final Color fieldColor = const Color(0xFFF6FAFF);
   final Color strokeColor = const Color(0xFFE2EFFF);
 
   @override
@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 28.0,
+          horizontal: 26.0,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(
-              height: 8.0,
+              height: 10.0,
             ),
             const Text(
               'Please enter your email address and password to log in to your account',
@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 30,
             ),
             const Text(
               'Email Address',
@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 30,
             ),
             const Text(
               'Password',

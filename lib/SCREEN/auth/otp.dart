@@ -14,6 +14,7 @@ class _OtpScreenState extends State<OtpScreen> {
   final List<TextEditingController> _otpControllers =
       List.generate(4, (_) => TextEditingController());
   final List<FocusNode> _focusNodes = List.generate(4, (_) => FocusNode());
+  bool _isLoading = false;
 
   @override
   void dispose() {
@@ -24,6 +25,27 @@ class _OtpScreenState extends State<OtpScreen> {
       node.dispose();
     }
     super.dispose();
+  }
+
+  void _onContinuePressed() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    final otp = _otpControllers.map((e) => e.text).join();
+    print('Entered OTP: $otp'); // Placeholder for backend logic
+    await Future.delayed(const Duration(seconds: 2));
+
+    setState(() {
+      _isLoading = false;
+    });
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const DashboardPage(),
+      ),
+    );
   }
 
   @override
@@ -87,9 +109,10 @@ class _OtpScreenState extends State<OtpScreen> {
                           decoration: InputDecoration(
                             counterText: '',
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                              borderSide: const BorderSide(color: Colors.grey),
-                            ),
+                                borderRadius: BorderRadius.circular(8.0),
+                                borderSide: BorderSide.none
+                                // borderSide: const BorderSide(color: Colors.grey),
+                                ),
                             filled: true,
                             fillColor: Colors.grey.shade300,
                           ),
@@ -109,21 +132,13 @@ class _OtpScreenState extends State<OtpScreen> {
                     }),
                   ),
                   const SizedBox(height: 40),
-                  CustomButton(
-                    label: 'Continue',
-                    onPressed: () {
-                      final otp = _otpControllers.map((e) => e.text).join();
-                      print(
-                          'Entered OTP: $otp'); // Placeholder for backend logic
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const DashboardPage(),
+                  _isLoading
+                      ? const CircularProgressIndicator()
+                      : CustomButton(
+                          label: 'Continue',
+                          onPressed: _onContinuePressed,
+                          backgroundColor: AppColors.buttonAndLogoColor,
                         ),
-                      );
-                    },
-                    backgroundColor: AppColors.buttonAndLogoColor,
-                  ),
                 ],
               ),
             ],
