@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:klobank/SCREEN/home_page.dart';
+// import 'package:klobank/SCREEN/home_page.dart';
 import 'package:klobank/SCREEN/onboardFolder/introScreen1.dart';
 import 'package:klobank/SCREEN/onboardFolder/screen2.dart';
 import 'package:klobank/SCREEN/onboardFolder/screen3.dart';
 import 'package:klobank/SCREEN/onboardFolder/screen4.dart';
 import 'package:klobank/SCREEN/onboardFolder/screen5.dart';
+// import 'package:klobank/SCREEN/pages/balanceDashboard/balance1.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -39,7 +40,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               const Screen5(),
             ],
           ),
-         
           if (currentPageIndex < 4)
             Container(
               alignment: const Alignment(0, 0.8),
