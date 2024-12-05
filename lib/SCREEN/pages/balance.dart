@@ -51,7 +51,7 @@ class _BalanceCarouselState extends State<BalanceCarousel> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          height: 170,
+          height: 150,
           child: PageView(
             controller: _pageController,
             children: const [

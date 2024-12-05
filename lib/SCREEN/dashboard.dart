@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:klobank/SCREEN/colors/app_colors.dart';
 import 'package:klobank/SCREEN/pages/balance.dart';
 import 'package:klobank/SCREEN/pages/dashboard_components.dart';
+import 'package:klobank/SCREEN/pages/utility.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -25,9 +26,11 @@ class _DashboardPageState extends State<DashboardPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 20),
-                WelcomeUser(), // Ensure this widget is properly constrained
+                WelcomeUser(),
                 SizedBox(height: 20),
                 BalanceCarousel(),
+                SizedBox(height: 20),
+                UtilitySection(),
               ],
             ),
           ),
