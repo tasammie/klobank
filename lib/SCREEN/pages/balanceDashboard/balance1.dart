@@ -41,7 +41,7 @@ class _BalanceScreen1State extends State<BalanceScreen1> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                isAmountVisible ? '# $amount' : '*****',
+                isAmountVisible ? '₦ $amount' : '*****',
                 style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,

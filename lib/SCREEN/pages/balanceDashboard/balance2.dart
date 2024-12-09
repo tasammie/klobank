@@ -32,7 +32,7 @@ class BalanceScreen2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                '# $amount',
+                '₦ $amount',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,

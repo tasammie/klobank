@@ -7,7 +7,7 @@ class WelcomeUser extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String userName = "John Doe";
+    const String userName = "John Doe";
     return Row(
       children: [
         // CircleAvatar(
@@ -23,10 +23,10 @@ class WelcomeUser extends StatelessWidget {
         //   ),
         // ),
         const SizedBox(width: 15),
-        Expanded(
+        const Expanded(
           child: Text(
             'Hi, $userName',
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
@@ -59,103 +59,3 @@ class WelcomeUser extends StatelessWidget {
 }
 
 
-
-
-
-// class BalanceScreen extends StatefulWidget {
-//   const BalanceScreen({super.key});
-
-//   @override
-//   State<BalanceScreen> createState() => _BalanceScreenState();
-// }
-
-// class _BalanceScreenState extends State<BalanceScreen> {
-//   final String userName = "John Doe";
-//   final String bankName = "Wema Bank";
-//   final String accountNumber = "0110321290";
-//   String amount = "2,444,444";
-//   bool isAmountVisible = true; // State to toggle visibility of balance
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       padding: const EdgeInsets.all(16),
-//       width: double.infinity,
-//       decoration: BoxDecoration(
-//         color: AppColors.buttonAndLogoColor,
-//         borderRadius: BorderRadius.circular(12),
-//       ),
-//       child: Column(
-//         crossAxisAlignment: CrossAxisAlignment.center,
-//         children: [
-//           Text(
-//             'Account Balance',
-//             style: TextStyle(
-//               fontSize: 18,
-//               fontWeight: FontWeight.w400,
-//               color: Colors.grey[300],
-//             ),
-//           ),
-//           const SizedBox(height: 10),
-//           Row(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             children: [
-//               Text(
-//                 isAmountVisible ? '# $amount' : '*****',
-//                 style: const TextStyle(
-//                   fontSize: 22,
-//                   fontWeight: FontWeight.w600,
-//                   color: AppColors.background_color,
-//                 ),
-//               ),
-//               const SizedBox(width: 10),
-//               GestureDetector(
-//                 onTap: () {
-//                   setState(() {
-//                     isAmountVisible = !isAmountVisible; // Toggle visibility
-//                   });
-//                 },
-//                 child: Icon(
-//                   isAmountVisible ? Icons.visibility : Icons.visibility_off,
-//                   color: AppColors.background_color,
-//                 ),
-//               ),
-//             ],
-//           ),
-//           const SizedBox(height: 15),
-//           Row(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             children: [
-//               Text(
-//                 "$bankName  $accountNumber",
-//                 style: const TextStyle(
-//                   fontSize: 20,
-//                   fontWeight: FontWeight.w600,
-//                   color: AppColors.background_color,
-//                 ),
-//               ),
-//               const SizedBox(width: 10),
-//               GestureDetector(
-//                 onTap: () {
-//                   Clipboard.setData(
-//                     ClipboardData(text: "$bankName  $accountNumber"),
-//                   );
-//                   ScaffoldMessenger.of(context).showSnackBar(
-//                     const SnackBar(
-//                       content: Text('Copied to clipboard'),
-//                     ),
-//                   );
-//                 },
-//                 child: const Icon(
-//                   Icons.copy,
-//                   color: AppColors.background_color,
-//                   size: 20,
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
