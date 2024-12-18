@@ -62,6 +62,42 @@ class RecentTransaction extends StatelessWidget {
             amount: '+ ₦800,000',
             amountColor: Colors.green,
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            "Load More...",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const TransactionCard(
+            icon: Icons.receipt_long,
+            title: 'Loan Repayment',
+            time: '10:30pm',
+            amount: '- ₦1,800,400',
+            amountColor: Colors.red,
+          ),
+          const SizedBox(height: 8),
+          const TransactionCard(
+            icon: Icons.account_balance_wallet,
+            title: 'Wallet Top Up',
+            time: '5:45pm',
+            amount: '+ ₦2,500',
+            amountColor: Colors.green,
+          ),
+          const SizedBox(height: 8),
+          const TransactionCard(
+            icon: Icons.person,
+            title: 'Victor Isaac',
+            time: '10:45pm',
+            amount: '+ ₦800,000',
+            amountColor: Colors.green,
+          ),
         ],
       ),
     );

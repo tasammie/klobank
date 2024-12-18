@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:klobank/SCREEN/colors/app_colors.dart';
+import 'package:klobank/SCREEN/pages/homePage/balanceDashboard/balance1.dart';
+import 'package:klobank/SCREEN/pages/homePage/balanceDashboard/balance2.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:klobank/SCREEN/pages/balanceDashboard/balance1.dart';
-import 'package:klobank/SCREEN/pages/balanceDashboard/balance2.dart';
+
 
 class BalanceCarousel extends StatefulWidget {
   const BalanceCarousel({super.key});

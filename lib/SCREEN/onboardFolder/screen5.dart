@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:klobank/SCREEN/auth/login.dart';
 import 'package:klobank/SCREEN/auth/signup.dart';
-import 'package:klobank/SCREEN/home_page.dart';
+// import 'package:klobank/SCREEN/home_page.dart';
 
 class Screen5 extends StatelessWidget {
   final Color customColor = const Color(0xFFD9D9D9);

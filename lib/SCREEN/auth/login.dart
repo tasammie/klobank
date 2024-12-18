@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:klobank/SCREEN/button/custom_button.dart';
 import 'package:klobank/SCREEN/colors/app_colors.dart';
+import 'package:klobank/SCREEN/pages/homePage/dashboard.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -159,7 +160,14 @@ class _LoginPageState extends State<LoginPage> {
               label: 'Login',
               fontSize: 20,
               textColor: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DashboardPage(),
+                  ),
+                );
+              },
             ),
             const SizedBox(
               height: 10,

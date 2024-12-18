@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:klobank/SCREEN/auth/otp.dart';
 import 'package:klobank/SCREEN/button/custom_button.dart';
 import 'package:klobank/SCREEN/colors/app_colors.dart';
-import 'package:klobank/SCREEN/home_page.dart';
+// import 'package:klobank/SCREEN/home_page.dart';
 
 class PhoneNumberScreen extends StatefulWidget {
   const PhoneNumberScreen({super.key});

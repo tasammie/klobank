@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:klobank/SCREEN/button/custom_button.dart';
 import 'package:klobank/SCREEN/colors/app_colors.dart';
-import 'package:klobank/SCREEN/dashboard.dart';
+import 'package:klobank/SCREEN/pages/homePage/dashboard.dart';
+// import 'package:klobank/SCREEN/home_page.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
