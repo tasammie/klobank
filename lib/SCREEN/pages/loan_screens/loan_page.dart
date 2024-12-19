@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BillsHomePage extends StatefulWidget {
-  const BillsHomePage({super.key});
+class LoanHomePage extends StatefulWidget {
+  const LoanHomePage({super.key});
 
   @override
-  State<BillsHomePage> createState() => _BillsHomePageState();
+  State<LoanHomePage> createState() => _LoanHomePageState();
 }
 
-class _BillsHomePageState extends State<BillsHomePage> {
+class _LoanHomePageState extends State<LoanHomePage> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -15,12 +15,12 @@ class _BillsHomePageState extends State<BillsHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            'Bills',
+            'loan-page',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 20),
           const Text(
-            'You have 3 unpaid bills of 150 each.',
+            'You have 3 unpaid loan of 150 each.',
             style: TextStyle(fontSize: 16),
           ),
           const SizedBox(height: 20),
